@@ -50,17 +50,17 @@ You'll turn in your credentials.ini using which we will get the following:
 ## Grading Rubric
 
 * If your code works as expected: 100 points. This includes:
-    * Basic APIs work as expected
-    * Representations work as expected
-    * Query parameter-based APIs work as expected
-    * Consumer program works as expected 
+    * Basic APIs work as expected.
+    * Representations work as expected.
+    * Query parameter-based APIs work as expected.
+    * Consumer program works as expected. 
 
 * For each non-working API, 5 points will be docked off. If none of them work,
   you'll get 35 points assuming
-    * README is updated with your name and email ID
-    * The credentials.ini is submitted with the correct URL of your repo, and
-    * Dockerfile is present 
-    * Docker-compose.yml works/builds without any errors 
+    * README is updated with your name and email ID.
+    * The credentials.ini is submitted with the correct URL of your repo.
+    * Dockerfile is present. 
+    * Docker-compose.yml works/builds without any errors.
 
 * If README is not updated, 5 points will be docked off. 
 
