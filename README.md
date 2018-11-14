@@ -32,8 +32,8 @@ This project has following four parts. Change the values for host and port accor
 
     * "http://<host:port>/listOpenOnly/csv?top=3" should return top 3 open times only (in ascending order) in CSV format 
     * "http://<host:port>/listOpenOnly/json?top=5" should return top 5 open times only (in ascending order) in JSON format
-    * "http://<host:port>/listCloseOnly/csv?top=3" should return top 3 close times only (in ascending order) in CSV format
-    * "http://<host:port>/listCloseOnly/json?top=5" should return top 5 close times only (in ascending order) in JSON format
+    * "http://<host:port>/listCloseOnly/csv?top=6" should return top 5 close times only (in ascending order) in CSV format
+    * "http://<host:port>/listCloseOnly/json?top=4" should return top 4 close times only (in ascending order) in JSON format
 
 * You'll also design consumer programs (e.g., in jQuery) to use the service that you expose. "website" inside DockerRestAPI is an example of that. It is uses PHP. You're welcome to use either PHP or jQuery to consume your services. NOTE: your consumer program should be in a different container like example in DockerRestAPI.
 
