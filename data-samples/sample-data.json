@@ -1,0 +1,60 @@
+{
+   "brevets":[
+      {
+         "distance":200,
+         "begin_date":"12/01/2021",
+         "begin_time":"18:06",
+         "controls":[
+            {
+               "km":0,
+               "mi":0,
+               "location":"begin",
+               "open":"12/01/2021 18:06",
+               "close":"12/01/2021 19:06"
+            },
+            {
+               "km":100,
+               "mi":62,
+               "location":null,
+               "open":"12/01/2021 21:02",
+               "close":"12/02/2021 00:46"
+            },
+            {
+               "km":150,
+               "mi":93,
+               "location":"second checkpoint",
+               "open":"12/01/2021 22:31",
+               "close":"12/02/2021 04:06"
+            },
+            {
+               "km":200,
+               "mi":124,
+               "location":"last checkpoint",
+               "open":"12/01/2021 23:59",
+               "close":"12/02/2021 07:36"
+            }
+         ]
+      },
+      {
+         "distance":1000,
+         "begin_date":"01/01/2022",
+         "begin_time":"00:00",
+         "controls":[
+            {
+               "km":0,
+               "mi":0,
+               "location":"begin",
+               "open":"01/01/2022 00:00",
+               "close":"01/01/2022 01:00"
+            },
+            {
+               "km":1000,
+               "mi":621,
+               "location":"finish line",
+               "open":"01/01/2022 09:05",
+               "close":"01/04/2022 03:00"
+            }
+         ]
+      }
+   ]
+}
