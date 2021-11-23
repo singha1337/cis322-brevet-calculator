@@ -1,12 +1,17 @@
 # Laptop Service
 
-from flask import Flask
+from flask import Flask, request
 from flask_restful import Resource, Api
+import flask
+from pymongo import MongoClient
+import pymongo
 
 # Instantiate the app
 app = Flask(__name__)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 api = Api(app)
-
+client = MongoClient('db', 27017)
+db = client.tododb
 
 class listAll(Resource):
     def get(self):
@@ -16,12 +21,12 @@ class listAll(Resource):
         else:
             top = int(top)
         if top == 0:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
+            db_items = list(db.tododb.find().sort("Open", pymongo.ASCENDING))
         else:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING).limit(top)
+            db_items = list(db.tododb.find().sort("Open", pymongo.ASCENDING).limit(top))
         return {
             'Open': [times['open_times'] for times in db_items],
-            'Close': [item['close_times'] for times in db_items]
+            'Close': [times['close_times'] for times in db_items]
         }
 
 
@@ -49,11 +54,11 @@ class listCloseOnly(Resource):
         else:
             top = int(top)
         if top == 0:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
+            db_items = db.tododb.find().sort("Close", pymongo.ASCENDING)
         else:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING).limit(top)
+            db_items = db.tododb.find().sort("Close", pymongo.ASCENDING).limit(top)
         return {
-            'Close': [item['close_times'] for times in db_items]
+            'Close': [times['close_times'] for times in db_items]
         }
 
 
@@ -106,9 +111,9 @@ class listCloseOnlyCSV(Resource):
         else:
             top = int(top)
         if top == 0:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
+            db_items = db.tododb.find().sort("Close", pymongo.ASCENDING)
         else:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING).limit(top)
+            db_items = db.tododb.find().sort("Close", pymongo.ASCENDING).limit(top)
 
         #CSV is just a string of comma separated values
         csv_string = ""
@@ -126,12 +131,12 @@ class listAllJSON(Resource):
         else:
             top = int(top)
         if top == 0:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
+            db_items = list(db.tododb.find().sort("Open", pymongo.ASCENDING))
         else:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING).limit(top)
+            db_items = list(db.tododb.find().sort("Open", pymongo.ASCENDING).limit(top))
         return {
             'Open': [times['open_times'] for times in db_items],
-            'Close': [item['close_times'] for times in db_items]
+            'Close': [times['close_times'] for times in db_items]
         }
 
 
@@ -159,9 +164,9 @@ class listCloseOnlyJSON(Resource):
         else:
             top = int(top)
         if top == 0:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
+            db_items = db.tododb.find().sort("Close", pymongo.ASCENDING)
         else:
-            db_items = db.tododb.find().sort("Open", pymongo.ASCENDING).limit(top)
+            db_items = db.tododb.find().sort("Close", pymongo.ASCENDING).limit(top)
         return {
             'Close': [times['close_times'] for times in db_items],
         }

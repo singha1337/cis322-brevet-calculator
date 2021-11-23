@@ -6,7 +6,7 @@ services:
     volumes:
       - ./laptop:/usr/src/app 
     ports:
-      - 5102:80  # host:container
+      - 5432:80  # host:container
     depends_on:
       - web
 
@@ -15,7 +15,7 @@ services:
     volumes:
       - ./website:/var/www/html 
     ports:
-      - 5101:80  # host:container
+      - 5431:80  # host:container
     depends_on:
       - laptop-service  # website is not going to work unless laptop-service is running
 
@@ -23,7 +23,7 @@ services:
     build: ./DockerMongo
     command: python -u app.py
     ports:
-      - "5103:5000"
+      - "5433:5000"
     volumes:
       - ./DockerMongo:/todo
     links:

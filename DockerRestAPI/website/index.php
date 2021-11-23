@@ -1,16 +1,16 @@
-<<html>
+<html>
     <head>
         <title>ACP Times with Restful API</title>
     </head>
 
     <body>
-        <h1>listAll</h1>
         <ul>
+        <h1>listAll</h1>
             <?php
             $json = file_get_contents('http://laptop-service/listAll');
             $obj = json_decode($json);
 	          $OpenTimes = $obj->Open;
-	          $CloseTimes = $obj->Close;
+                  $CloseTimes = $obj->Close;
             foreach ($OpenTimes as $opentime) {
                 echo "<li>Open: $opentime</li>";
             }
@@ -32,8 +32,8 @@
         <h1>listCloseOnly</h1>
             <?php
             $json = file_get_contents('http://laptop-service/listCloseOnly');
-            $obj - json_decode($json);
-                $CloseTimes = $obj->$Close;
+            $obj = json_decode($json);
+                $CloseTimes = $obj->Close;
             foreach ($CloseTimes as $closetime) {
                 echo "<li>Close: $closetime</li>";
             }
@@ -60,11 +60,11 @@
             $obj = json_decode($json);
                 $OpenTimes = $obj->Open;
                 $CloseTimes = $obj->Close;
-            foreach ($OpenTimes as $opentime) {
-                echo "<li>Open: $opentime</li>";
-            }
             foreach ($CloseTimes as $closetime) {
                 echo "<li>Close: $closetime</li>";
+            }
+            foreach ($OpenTimes as $opentime) {
+                echo "<li>Open: $opentime</li>";
             }
             ?>
 
