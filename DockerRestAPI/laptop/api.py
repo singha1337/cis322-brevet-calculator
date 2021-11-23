@@ -10,7 +10,11 @@ api = Api(app)
 
 class listAll(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
@@ -23,7 +27,11 @@ class listAll(Resource):
 
 class listOpenOnly(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
@@ -35,7 +43,11 @@ class listOpenOnly(Resource):
 
 class listCloseOnly(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
@@ -47,7 +59,11 @@ class listCloseOnly(Resource):
 
 class listAllCSV(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
@@ -64,7 +80,11 @@ class listAllCSV(Resource):
 
 class listOpenOnlyCSV(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
@@ -80,7 +100,11 @@ class listOpenOnlyCSV(Resource):
 
 class listCloseOnlyCSV(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
@@ -96,7 +120,11 @@ class listCloseOnlyCSV(Resource):
 
 class listAllJSON(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
@@ -109,7 +137,11 @@ class listAllJSON(Resource):
 
 class listOpenOnlyJSON(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
@@ -121,7 +153,11 @@ class listOpenOnlyJSON(Resource):
 
 class listCloseOnlyJSON(Resource):
     def get(self):
-        top = int(request.args.get("top"))
+        top = request.args.get("top")
+        if top is None:
+            top = 0
+        else:
+            top = int(top)
         if top == 0:
             db_items = db.tododb.find().sort("Open", pymongo.ASCENDING)
         else:
