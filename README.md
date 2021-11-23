@@ -34,4 +34,4 @@ This application calculates brevet opening and closing times using Randonneurs U
 
 Author: Arjun Singh
 Contact: asingh7@uoregon.edu
-Date: 11/16/2021
+Date: 11/22/2021
