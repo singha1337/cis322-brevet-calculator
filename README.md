@@ -15,8 +15,8 @@ This application calculates brevet opening and closing times using Randonneurs U
 
 * Test cases: If there are no opening/closing times, if a user presses Submit, they will be directed to a new page indicating that there is no opening/closing times to input into the database. If there is nothing in the database and a user presses Display, they will be directed to a page informing them there is nothing in the database.
 
-Consumer program: localhost:5431
-To access the API's use localhost:5432/(services as listed below)
+* Consumer program: localhost:5431
+* To access the API's use localhost:5432/(services as listed below)
     * `http://<host:port>/listAll` should return all open and close times in the database
     * `http://<host:port>/listOpenOnly` should return open times only
     * `http://<host:port>/listCloseOnly` should return close times only
